@@ -8,6 +8,6 @@ namespace ConsoleApp_GroupAssignment4_HighQuality.Models
 {
     public class UserClass
     {
-
+        // Assign to Anuhya 
     }
 }
