@@ -4,20 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp_GroupAssignment4_HighQuality.Models
+namespace DogWalkingBusiness.Models
 {
+
     public abstract class UserClass
     {
-        public string Username { get; private set; }
-        public string Password { get; private set; }
-        
-        protected UserClass(string username, string password)
-        {
-             Username = username;
-             Password = password;
-         }
-        
-         public abstract bool Login(string username, string password);
+        public string userName { get; private set; }
+        public string password { get; private set; }
 
+        protected UserClass(string userName, string password)
+        {
+            userName = userName;
+            password = password;
+        }
+
+        public abstract bool login(string userName, string password);
+
+        public abstract class User
+        {
+            public string userName { get; private set; }
+            public string password { get; private set; }
+
+            protected User(string userName, string password)
+            {
+                userName = userName;
+                password = password;
+            }
+
+            public abstract bool login(string userName, string password);
+        }
     }
 }

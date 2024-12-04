@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DogWalkingBusiness.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,18 +10,18 @@ namespace ConsoleApp_GroupAssignment4_HighQuality.Models
 {
     public class DogWalkerClass: UserClass
     {
-         public double Rate { get; set; }
-         public bool IsAvailable { get; set; }
-         public List<SessionClass> ScheduledSessions { get; private set; }
-         public DogWalkerClass(string username, string password, double rate) : base(username, password)
+         public double rate { get; set; }
+         public bool isAvailable { get; set; }
+         public List<SessionClass> scheduledSessions { get; private set; }
+         public DogWalkerClass(string userName, string password, double rate) : base(userName, password)
          {
-             Rate = rate;
-             IsAvailable = true;
-             ScheduledSessions = new List<SessionClass>();
+             rate = rate;
+             isAvailable = true;
+             scheduledSessions = new List<SessionClass>();
         }
-        public override bool Login(string username, string password)
+        public override bool login(string userName, string password)
         {
-            return Username == username && Password == password;
+            return userName == userName && password == password;
         }
     }
 }
