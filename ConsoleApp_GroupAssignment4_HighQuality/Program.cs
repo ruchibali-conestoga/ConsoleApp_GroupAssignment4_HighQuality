@@ -12,11 +12,21 @@ public class Program
         FileStorageService fileStorageService = new FileStorageService();
         List<SessionClass> sessions = fileStorageService.loadSessions();
 
-        // dynamic pending:
-        var walker = new DogWalkerClass("walker1", "password", 20.0);
-        var owner = new DogOwnerClass("owner1", "password");
-        var dogName = string.Empty;
-        //
+        Console.WriteLine("Enter Walker Name:");
+        string walkerName = Convert.ToString(Console.ReadLine());
+
+        Console.WriteLine("Enter Rate:");
+        double rate = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Enter password:");
+        string password = Convert.ToString(Console.ReadLine());
+
+        var walker = new DogWalkerClass(walkerName, password, rate);
+
+        var owner = new DogOwnerClass(walkerName, password);
+
+        Console.WriteLine("Enter Dog Name:");
+        string dogName = Convert.ToString(Console.ReadLine());
 
         dogWalkingService.scheduleSession(walker, owner, dogName, DateTime.Now);
         fileStorageService.saveSessions(sessions); 
